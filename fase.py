@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+
 from itertools import chain
 from atores import ATIVO
 
 
-VITORIA = 'VITORIA'
+VITORIA = 'VITÓRIA'
 DERROTA = 'DERROTA'
 EM_ANDAMENTO = 'EM_ANDAMENTO'
 
@@ -64,11 +65,8 @@ class Fase():
     def status(self):
         """
         Método que indica com mensagem o status do jogo
-
         Se o jogo está em andamento (ainda tem porco ativo e pássaro ativo), retorna essa mensagem.
-
         Se o jogo acabou com derrota (ainda existe porco ativo), retorna essa mensagem
-
         Se o jogo acabou com vitória (não existe porco ativo), retorna essa mensagem
 
         :return:
@@ -78,9 +76,7 @@ class Fase():
     def lancar(self, angulo, tempo):
         """
         Método que executa lógica de lançamento.
-
         Deve escolher o primeiro pássaro não lançado da lista e chamar seu método lançar
-
         Se não houver esse tipo de pássaro, não deve fazer nada
 
         :param angulo: ângulo de lançamento
@@ -92,7 +88,6 @@ class Fase():
     def calcular_pontos(self, tempo):
         """
         Lógica que retorna os pontos a serem exibidos na tela.
-
         Cada ator deve ser transformado em um Ponto.
 
         :param tempo: tempo para o qual devem ser calculados os pontos

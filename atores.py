@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 import math
 
-DESTRUIDO = 'Destruido'
+
+DESTRUIDO = 'Destruído'
 ATIVO = 'Ativo'
 GRAVIDADE = 10  # m/s^2
 
@@ -18,7 +19,7 @@ class Ator():
 
     def __init__(self, x=0, y=0):
         """
-        Método de inicialização da classe. Deve inicializar os parâmetros x, y, caracter e status
+        Método de inicialização da classe. Deve inicializar os parâmetros x, y, carácter e status
 
         :param x: Posição horizontal inicial do ator
         :param y: Posição vertical inicial do ator
@@ -46,7 +47,7 @@ class Ator():
         Só deve haver colisão se os dois atores tiverem seus status ativos.
         Para colisão, é considerado um quadrado, com lado igual ao parâmetro intervalo, em volta do ponto onde se
         encontra o ator. Se os atores estiverem dentro desse mesmo quadrado, seus status devem ser alterados para
-        destruido, seus caracteres para destruido também.
+        destruído, seus caracteres para destruído também.
 
         :param outro_ator: Ator a ser considerado na colisão
         :param intervalo: Intervalo a ser considerado
@@ -74,9 +75,8 @@ class Passaro(Ator):
     def __init__(self, x=0, y=0):
         """
         Método de inicialização de pássaro.
-
-        Deve chamar a inicialização de ator. Além disso, deve armazenar a posição inicial e incializar o tempo de
-        lançamento e angulo de lançamento
+        Deve chamar a inicialização de ator. Além disso, deve armazenar a posição inicial e inicializar o tempo de
+        lançamento e ângulo de lançamento
 
         :param x:
         :param y:
@@ -89,7 +89,7 @@ class Passaro(Ator):
 
     def foi_lancado(self):
         """
-        Método que retorna verdaeira se o pássaro já foi lançado e falso caso contrário
+        Método que retorna verdadeiro se o pássaro já foi lançado e falso caso contrário
 
         :return: booleano
         """
@@ -98,21 +98,18 @@ class Passaro(Ator):
     def colidir_com_chao(self):
         """
         Método que executa lógica de colisão com o chão. Toda vez que y for menor ou igual a 0,
-        o status dos Passaro deve ser alterado para destruido, bem como o seu caracter
+        o status do Pássaro deve ser alterado para destruído, bem como o seu carácter
 
         """
         pass
 
     def calcular_posicao(self, tempo):
         """
-        Método que cálcula a posição do passaro de acordo com o tempo.
-
+        Método que calcula a posição do pássaro de acordo com o tempo.
         Antes do lançamento o pássaro deve retornar o valor de sua posição inicial
-
         Depois do lançamento o pássaro deve calcular de acordo com sua posição inicial, velocidade escalar,
-        ângulo de lancamento, gravidade (constante GRAVIDADE) e o tempo do jogo.
-
-        Após a colisão, ou seja, ter seus status destruido, o pássaro deve apenas retornar a última posição calculada.
+        ângulo de lançamento, gravidade (constante GRAVIDADE) e o tempo do jogo.
+        Após a colisão, ou seja, ter seu status destruído, o pássaro deve apenas retornar a última posição calculada.
 
         :param tempo: tempo de jogo a ser calculada a posição
         :return: posição x, y

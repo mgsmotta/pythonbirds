@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 
+class Pessoa:
+    def cumprimentar(self):
+        return f'Olá! {id(self)}'
 
-class Pessoa():
-    pass
+
+if __name__ == '__main__':
+    p = Pessoa()
+    print(Pessoa.cumprimentar(p))
+    print(id(p))
+    print(p.cumprimentar())
